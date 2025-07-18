@@ -186,22 +186,326 @@ nav
 .start
 {
     position: absolute;
-    top: 800px;
+    top: 950px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 20px;
     z-index: 100;
+    display: flex;
+}
+
+.start_1
+{
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    background-color: rgb(77, 214, 196);
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 400px;
+    height: 270px;
+    transition: all 0.5s;
+
+    .left
+    {
+        padding-top: 10px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .right
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+.start_1:hover
+{
+    transform: scale(1.05);
+    box-shadow: -2px 0px 30px rgb(77, 214, 196);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.start_2
+{
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    background-color: rgb(38, 80, 143);
+    color: white;
+    width: 400px;
+    height: 270px;
+    transition: all 0.5s;
+
+    .left
+    {
+        padding-top: 10px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .right
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        button
+        {
+            border: 1px solid white;
+            width: 170px;
+            height: 40px;
+            border-radius: 20px;
+            margin-left: 22px;
+            background-color: rgb(38, 80, 143);
+            color: white;
+            transition: all 0.5s;
+            font-weight: bold;
+        }
+        button:hover
+        {
+            background-color: white;
+            color: rgb(77, 214, 196);
+        }
+    }
+}
+.start_2:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgb(38, 80, 143);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.start_3
+{
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    background-color: rgb(17, 50, 122);
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 400px;
+    height: 270px;
+    transition: all 0.5s;
+
+    .left
+    {
+        padding-top: 10px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .right
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        ul
+        {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            li
+            {
+                padding-bottom: 5px;
+                border-bottom: 1px solid rgb(255, 255, 255);
+            }
+        }
+    }
+}
+.start_3:hover
+{
+    transform: scale(1.05);
+    box-shadow: 2px 0px 30px rgb(17, 50, 122);
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* ======================================================================================== */
 
 
-.main
+.main_top
 {
-    margin-top: -400px; 
+    margin-top: 300px;
+    h1
+    {
+        text-align: center;
+        width: 100%;
+        color: rgb(18, 28, 61);
+    }
+    .main_top_2
+    {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        .main_top_2_0
+        {
+            display: flex;
+            gap: 30px;
+            i
+            {
+                margin-top: 15px;
+                color: rgb(53, 119, 119);
+                font-size: 50px;
+            }
+            p
+            {
+                color: rgb(21, 38, 94);
+                font-weight: bold;
+            }
+            button
+            {
+                border: 1px solid white;
+                width: 170px;
+                height: 50px;
+                border-radius: 20px;
+                margin-left: 22px;
+                background-color: rgb(38, 80, 143);
+                color: white;
+                transition: all 0.5s;
+                font-weight: bold;
+            }
+            button:hover
+            {
+                background-color: white;
+                color: rgb(38, 80, 143);
+                border: solid 1px rgb(38, 80, 143);
+            }
+        }
+        .main_top_2_1
+        {
+            color: rgb(21, 38, 94);
+            font-weight: bold;
+            background-color: white;
+            padding: 50px;
+            padding-top: 0px;
+            border-radius: 20px;
+            z-index: 100;
+        }
+    }
+}
+
+.image_11
+    {
+        border-radius:30px;
+        position: absolute;
+        top: 1690px;
+        z-index: 11;
+        left: 13%;
+    }
+
+
+/* ======================================================================================== */
+
+
+
+.family-section 
+{
+    margin-top: 100px;
+    background-color: #1e3170;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.family-text 
+{
+    display: flex;
+    gap: 170px;
+    margin-top: 190px;
+    max-width: 1500px;
+}
+
+.family-text h6 
+{
+    color: #00e1dd;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.family-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.family-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cfd8f7;
+}
+
+.family-text ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    justify-content: center;
+}
+
+.family-text ul li {
+    color: #00e1dd;
+    font-weight: bold;
+}
+
+.family-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.step-card {
     background-color: white;
-    padding: 40px;
-    z-index: 10;
-    position: relative;
-    height: 1000px;
+    color: #1e3170;
+    border-radius: 10px;
+    padding: 30px 25px;
+    width: 250px;
+    transition: all 0.4s;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.step-card h2 {
+    font-size: 40px;
+    color: rgba(0,0,0,0.1);
+    margin: 0;
+}
+
+.step-card h5 {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step-card p {
+    font-size: 13px;
+    margin: 10px 0;
+    color: #4a4a4a;
+}
+
+.step-card a {
+    color: #1e3170;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
 }
