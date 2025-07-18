@@ -186,7 +186,7 @@ nav
 .start
 {
     position: absolute;
-    top: 950px;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -398,14 +398,13 @@ nav
     {
         border-radius:30px;
         position: absolute;
-        top: 1690px;
+        top: 180%;
         z-index: 11;
         left: 13%;
     }
 
 
 /* ======================================================================================== */
-
 
 
 .family-section 
@@ -434,78 +433,155 @@ nav
     font-size: 14px;
 }
 
-.family-text h1 {
+.family-text h1 
+{
     font-size: 36px;
     font-weight: bold;
     margin: 20px 0;
 }
 
-.family-text p {
-    font-size: 14px;
+.family-text p 
+{
+    font-size: 16px;
     line-height: 1.6;
+    font-weight: bold;
     color: #cfd8f7;
 }
 
-.family-text ul {
-    list-style: none;
+.family-text ul 
+{
     padding: 0;
+    margin-left: 20px;
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
-    justify-content: center;
 }
 
-.family-text ul li {
+.family-text ul li 
+{
     color: #00e1dd;
     font-weight: bold;
 }
 
-.family-steps {
+
+
+.family-steps 
+{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    max-width: 1200px;
 }
 
-.step-card {
+.step-card 
+{
     background-color: white;
     color: #1e3170;
     border-radius: 10px;
     padding: 30px 25px;
-    width: 250px;
+    padding-top: 10px;
+    width: 300px;
+    height: 350px;
     transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
 }
 
-.step-card:hover {
-    transform: translateY(-10px);
+.step-card::before
+{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 4px;
+    height: 80%;
+    background-color: #00e1dd;
+    transform: scaley(0);
+    transform-origin: left;
+    transition: all 0.5s    ease-out;
+}
+
+.step-card:hover::before
+{
+    transform: scaley(1);
+}
+
+.step-card:hover 
+{
+    transform: translateY(-15px);
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+    .step_card_top
+    {
+        i
+        {
+            color: #00e1dd;
+            transform: translateY(-10px);
+        }
+        h2
+        {
+            color: rgba(28, 41, 97, 0.678)
+        }
+    }
 }
 
-.step-card h2 {
-    font-size: 40px;
-    color: rgba(0,0,0,0.1);
-    margin: 0;
+.step_card_top
+{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    transition: all 0.5s;
+    i
+    {
+        font-size: 50px;
+        transition: all 0.5s;
+    }
+    h2 
+    {
+        font-size: 100px;
+        color: rgba(0,0,0,0.1);
+        margin: 0;
+        margin-bottom: 10px;
+        transition: all 0.5s;
+    }
 }
 
-.step-card h5 {
+
+.step-card h5 
+{
     margin: 10px 0;
     font-size: 16px;
     font-weight: bold;
 }
 
-.step-card p {
+.step-card p 
+{
     font-size: 13px;
     margin: 10px 0;
     color: #4a4a4a;
 }
 
-.step-card a {
+.step-card a 
+{
     color: #1e3170;
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;
     display: inline-block;
     margin-top: 10px;
+    transition: all 0.5s;
 }
+
+.step-card a:hover
+{
+    color: #00e1dd;
+}
+
+
+/* ======================================================================================== */
+
+
