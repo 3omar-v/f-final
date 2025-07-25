@@ -1,0 +1,152 @@
+body 
+{
+    background: linear-gradient(90deg, #3b4f6d, #141c46);
+    margin: 0;
+    display: flex;
+}
+
+main 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10px;
+}
+
+.card 
+{
+    background: linear-gradient(135deg, #222250 0%, #254888 50%, #91eae4 100%);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 0.2);
+    color: white;
+    overflow: hidden;
+}
+
+.card-header 
+{
+    background: linear-gradient(135deg, #77aada 0%, #2c2a5f 100%);
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.card-header h2
+{
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-header p 
+{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.form-section 
+{
+    background: white;
+    color: #1a202c;
+    padding: 32px 40px 48px 40px;
+    border-radius: 13px;
+    font-weight: 600;
+}
+
+.form-tabs 
+{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.form-tab 
+{
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    border: 1.5px solid ;
+    transition: all 0.3s ease;
+}
+
+.form-tab.active 
+{
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-color: #6b46c1;
+    color: white;
+    transition: all 0.5s;
+}
+
+form label 
+{
+    display: block;
+    font-weight: 600;
+    margin: 8px 0 4px 0;
+    font-size: 14px;
+}
+
+form input
+{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+form input:focus
+{
+    outline: none;
+    border-color: #6b46c1;
+    box-shadow: 0 0 4px 0 #6b46c1aa;
+}
+
+.checkbox-group 
+{
+    margin: 16px 0 20px 0;
+    gap: 8px;
+}
+
+button.submit-btn 
+{
+    width: 100%;
+    padding: 9.6px;
+    background: linear-gradient(90deg, #667eea 50%, #764ba2 0%);
+    background-size: 200%;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+button.submit-btn:hover 
+{
+    background-position: right;
+}
+
+@media (max-width: 400px) 
+{
+    .card 
+    {
+        margin: 0 16px;
+    }
+}

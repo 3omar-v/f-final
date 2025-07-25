@@ -1,0 +1,236 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luxury Estates - Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/cont.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body>
+    <nav>
+        <div class="nav_right">
+            <a class="navbar-brand" href="home.html"><h2><img src="images/logo.png" alt="">   Medcity</h2></a>
+        </div>
+
+        <div>
+            <ul>
+                <a class="navbar-brand" href="home.html">Home</a>
+                <a class="navbar-brand" href="doctors.html">Doctors</a>
+                <a class="navbar-brand" href="cart.html">cart</a>
+                <a class="navbar-brand" href="contact.html">Contacts</a>
+            </ul>
+
+            <button><a class="navbar-brand" href="index.html">login</a> / <a class="navbar-brand" href="register.html">register</a></button>
+        </div>
+    </nav>
+
+<!-- ===================================================================================================================== -->
+
+    <section class="contact-header">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team of real estate experts</p>
+    </section>
+
+<!-- ===================================================================================================================== -->
+
+    <main class="container contact-main" role="main" aria-labelledby="contactTitle">
+        <div class="row g-4">
+
+        <section class="col-lg-8 form-container">
+            <h2 class="mb-4" style="font-weight: 700; font-size: 1.35rem;">Send us a Message</h2>
+            <form >
+            <div  class="visually-hidden">All fields marked with an asterisk are required.</div>
+
+
+            <div class="row g-3 mb-3">
+
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label fw-semibold">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" />
+                    <div id="firstNameHelp" class="form-text">Only letters allowed.</div>
+                    <div class="invalid-feedback">Please enter a valid first name using letters only.</div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label fw-semibold">Last Name <span class="text-danger">*</span></label>
+                    <inputtype="text" id="lastName" class="form-control"/>
+                    <div id="lastNameHelp" class="form-text">Only letters allowed.</div>
+                    <div class="invalid-feedback">Please enter a valid last name using letters only.</div>
+                </div>
+
+            </div>
+
+
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                <label for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                <input
+                    type="email" name="email" class="form-control" />
+                <div id="emailHelp" class="form-text">Enter a valid email address.</div>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+
+                <div class="col-md-6">
+                    <label for="phone" class="form-label fw-semibold">Phone Number</label>
+                    <input type="tel" class="form-control"/>
+                    <div id="phoneHelp" class="form-text">Digits only </div>
+                    <div class="invalid-feedback">Please enter a valid phone number with digits only.</div>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label fw-semibold">Subject <span class="text-danger">*</span></label>
+                <select class="form-select" id="subject" name="subject" required aria-required="true" aria-describedby="subjectHelp">
+                <option value="" disabled selected>Select a subject</option>
+                <option value="Property Inquiry">Property Inquiry</option>
+                <option value="Schedule Viewing">Schedule Viewing</option>
+                <option value="General Question">General Question</option>
+                <option value="Other">Other</option>
+                </select>
+                <div id="subjectHelp" class="form-text">Please select a subject.</div>
+                <div class="invalid-feedback">Please select a subject.</div>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="message"></textarea>
+                <div id="messageHelp" class="form-text">Your message is required.</div>
+                <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="subscribe" name="subscribe" />
+                <label class="form-check-label" for="subscribe">Subscribe to our newsletter for property updates</label>
+            </div>
+            <button type="submit" class="btn btn-send send"  aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 7.855a.5.5 0 0 0-.106.81l4.995 4.995a.5.5 0 0 0 .81-.106L15.964.686z"/></svg> Send Message
+            </button>
+            </form>
+        </section>
+
+        <aside class="col-lg-4">
+            <section class="sidebar-panel" aria-labelledby="officeInfoTitle" data-aos="fade-left" data-aos-offset="200" data-aos-delay="150" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
+            <h5 id="officeInfoTitle">hospitl Information</h5>
+            <p>
+                
+                <strong>location</strong><br />
+                123 Luxury Street<br />
+                Downtown District<br />
+                City, State 12345
+            </p>
+            <p>
+                <strong>Phone</strong><br />
+                +20 155004406
+            </p>
+            <p>
+                <strong>Email</strong><br />
+                info@luxuryestates.com
+            </p>
+            <p>
+                <strong>work Hours</strong><br />
+                Mon - Fri: 9:00 AM - 6:00 PM<br />
+                Sat: 10:00 AM - 4:00 PM<br />
+                Sun: Closed
+            </p>
+            </section>
+
+        </aside>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="blue">
+            <div class="blue_1">
+                <h2><img src="images/logo_2.png" alt=""> Medcity</h2>
+                <p>
+                    Our goal is to deliver quality of care in a 
+                    <br> courteous, respectful, and compassionate 
+                    <br> manner. We hope you will allow us to 
+                    <br>care for you and strive to be the first and 
+                    <br>best choice for your family healthcare.
+                </p>
+                <a href="#" class="navbar-brand"> Make appointment</a>
+            </div>
+
+            <div class="blue_2">
+                <h7>Departments</h7>
+                <ul>
+                    <a href="#" class="navbar-brand">Neurology Clinic</a>
+                    <a href="#" class="navbar-brand">Cardiology Clinic</a>
+                    <a href="#" class="navbar-brand">Pathology Clinic</a>
+                    <a href="#" class="navbar-brand">Laboratory Analysis</a>
+                    <a href="#" class="navbar-brand">Pediatric Clinic</a>
+                    <a href="#" class="navbar-brand">Cardiac Clinic</a>
+                </ul>
+            </div>
+
+            <div class="blue_3">
+                <h7>Departments</h7>
+                <ul>
+                    <a href="#" class="navbar-brand">About Us</a>
+                    <a href="#" class="navbar-brand">our clincs</a>
+                    <a href="#" class="navbar-brand">our doctors</a>
+                    <a href="#" class="navbar-brand">news & media</a>
+                    <a href="#" class="navbar-brand">appointments</a>
+                </ul>
+            </div>
+
+            <div class="blue_4">
+                <h5>Quick Contacts</h5>
+                <p>If you have any questions or need help, feel free to contact with our team.</p>
+                <h5><i class="fa-solid fa-phone"></i> 01550104406</h5>
+                <p>2307 Beverley Rd Brooklyn, New York 11226 United States.</p>
+                <a href="#" class="navbar-brand">  get diractions</a>
+            </div>
+        </div>
+
+        <div class="white">
+            <p>© 2020 DataSoft, All Rights Reserved. With Love by omar ali</p>
+            <ul>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Cookies</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Form validation enhancements
+        (() => {
+        'use strict'
+
+        const form = document.getElementById('contactForm');
+
+        const letterPattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s\-'`]+$/;
+
+        form.addEventListener('submit', function(event) {
+
+            // Validate phone number digits only if filled
+            if (phoneInput.value.trim().length > 0 && !/^\d+$/.test(phoneInput.value.trim())) {
+            phoneInput.setCustomValidity('Please enter a valid phone number with digits only.');
+            } else {
+            phoneInput.setCustomValidity('');
+            }
+
+            if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        }, false);
+
+        })();
+    </script>
+    </body>
+    </html>
