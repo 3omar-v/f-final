@@ -1,58 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Travel Planner - Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="./node_modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/register.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/register.css">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
 </head>
 
+
 <body>
-    <main class="container mt-5">
-        <section class="card" role="main" aria-labelledby="welcome-back">
-            <header class="card-header">
-                <h2 id="welcome-back" class="d-flex align-items-center">Welcome Back</h2>
-                <p>Sign in to your account or create a new one to start planning your next adventure</p>
-            </header>
 
-            <div class="card-body">
-                <div class="form-section">
-                    <ul class="nav nav-tabs" role="tablist" aria-label="Login or Register tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html" >login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Register.html">Register</a>
-                        </li>
-                    </ul>
 
-                    <div class="tab-content mt-3">
-                        <div class="tab-pane fade show active" >
-                            <form >
-            <label for="email-login"><i class="fas fa-envelope" ></i> Email Address</label>
-            <input type="email" id="email-login"  placeholder="Enter your email">            
+<div class="container">
+  <section class="left-side">
+    <h1 class="welcome-text">WELCOME BACK</h1>
+    <p class="welcome-subtext">Welcome back! Please enter your details.</p>
+        <form action="#" method="POST" autocomplete="off">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required />
 
-            <label for="password-login"><i class="fas fa-lock" aria-hidden="true"></i> Password</label>
-            <input type="password" id="password-login" placeholder="Enter your password" required>                
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="enter password" />
 
-            <div class="checkbox-group">
-
+            <div class="options">
+            <label for="remember">
+                <input type="checkbox" id="remember" name="remember" />
+                Remember me
+            </label>
+            <button class="forgot-password">Forgot password</button>
             </div>
 
-            <button type="submit" class="submit-btn" onclick="window.location.href='home.html'">Sign In</button>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="button" class="btn btn-google">Sign in with Google</button>
 
-            </form>
-        </div>
-        </section>
-    </main>
+            <p class="signup-text">
+                Don’t have an account? <a href="#">Sign up to free!</a>
+            </p>
+        </form>
+    </section>
+    <section class="right-side">
+        <img src="images/image_2.jpg" />
+    </section>
+</div>
 
-    <script src="./Js/login.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+<script src="js/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    </html>
+
+</body>
+</html>

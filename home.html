@@ -12,19 +12,19 @@
 <body>
     <nav>
         <div class="nav_right">
-            <a class="navbar-brand" href="home.html"><h2><img src="images/logo.png" alt="">   Medcity</h2></a>
+            <a class="navbar-brand" href="home.html"><h4><img src="images/logo.png" alt="">   Medcity</h4></a>
         </div>
-
-        <div>
-            <ul>
+                <ul>
                 <a class="navbar-brand" href="home.html">Home</a>
-                <a class="navbar-brand" href="doctors.html">Doctors</a>
+                <a class="navbar-brand" href="services.html">services</a>
                 <a class="navbar-brand" href="cart.html">cart</a>
+                <a class="navbar-brand" href="favorites.html">favorite</a>
                 <a class="navbar-brand" href="contact.html">Contacts</a>
             </ul>
 
-            <button><a class="navbar-brand" href="index.html">login</a> / <a class="navbar-brand" href="register.html">register</a></button>
-        </div>
+            <div id="login-btn">
+                <button class="login" ><a class="navbar-brand"  href="index.html">login</a> / <a class="navbar-brand" href="register.html">register</a></button>
+            </div>
     </nav>
 
 <!-- ==================================================================================== -->
@@ -302,6 +302,39 @@
             </ul>
         </div>
     </footer>
+
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const userName = localStorage.getItem("userName");
+
+            if (userName) 
+            {
+                const loginBtn = document.getElementById("login-btn");
+                if (loginBtn) 
+                {
+                    loginBtn.innerHTML =
+                    `
+                        <div class="d-flex gap-2 align-items-center login_rep">
+                            <h6>${userName}</h6>
+                            <button class="log_out" id="logout-btn">Logout</button>
+                        </div>
+                    `;
+                }
+
+                document.addEventListener("click", (e) => 
+                {
+                    if (e.target && e.target.id === "logout-btn") 
+                    {
+                        localStorage.removeItem("userName");
+                        location.reload(); 
+                    }
+                });
+            }
+        });
+    </script>
 
     <script src="js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>

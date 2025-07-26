@@ -11,22 +11,22 @@
 
     </head>
     <body>
-    <nav>
-        <div class="nav_right">
-            <a class="navbar-brand" href="home.html"><h2><img src="images/logo.png" alt="">   Medcity</h2></a>
-        </div>
-
-        <div>
-            <ul>
-                <a class="navbar-brand" href="home.html">Home</a>
-                <a class="navbar-brand" href="doctors.html">Doctors</a>
-                <a class="navbar-brand" href="cart.html">cart</a>
-                <a class="navbar-brand" href="contact.html">Contacts</a>
-            </ul>
-
-            <button><a class="navbar-brand" href="index.html">login</a> / <a class="navbar-brand" href="register.html">register</a></button>
-        </div>
-    </nav>
+        <nav>
+            <div class="nav_right">
+                <a class="navbar-brand" href="home.html"><h4><img src="images/logo.png" alt="">   Medcity</h4></a>
+            </div>
+                    <ul>
+                    <a class="navbar-brand" href="home.html">Home</a>
+                    <a class="navbar-brand" href="services.html">services</a>
+                    <a class="navbar-brand" href="cart.html">cart</a>
+                    <a class="navbar-brand" href="favorites.html">favorite</a>
+                    <a class="navbar-brand" href="contact.html">Contacts</a>
+                </ul>
+    
+                <div id="login-btn">
+                    <button class="login" ><a class="navbar-brand"  href="index.html">login</a> / <a class="navbar-brand" href="register.html">register</a></button>
+                </div>
+        </nav>
 
 <!-- ===================================================================================================================== -->
 
@@ -203,6 +203,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+
+        
+
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const userName = localStorage.getItem("userName");
+
+            if (userName) 
+            {
+                const loginBtn = document.getElementById("login-btn");
+                if (loginBtn) 
+                {
+                    loginBtn.innerHTML =
+                    `
+                        <div class="d-flex gap-2 align-items-center login_rep">
+                            <h6>${userName}</h6>
+                            <button class="log_out" id="logout-btn">Logout</button>
+                        </div>
+                    `;
+                }
+
+                document.addEventListener("click", (e) => 
+                {
+                    if (e.target && e.target.id === "logout-btn") 
+                    {
+                        localStorage.removeItem("userName");
+                        location.reload(); 
+                    }
+                });
+            }
+        });
+
+
+        
         AOS.init();
 
         // Form validation enhancements

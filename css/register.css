@@ -1,152 +1,200 @@
-body 
-{
-    background: linear-gradient(90deg, #3b4f6d, #141c46);
-    margin: 0;
-    display: flex;
-}
+/* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+    }
+    a {
+      color: #f0434f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+    text-decoration: underline;
+    }
 
-main 
-{
+    /* Container with two sides */
+    .container {
+    display: flex;
+    min-height: 100vh;
+    background: #f7f7f7;
+    }
+
+    /* Left side – form */
+    .left-side {
+    flex: 1;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 48px;
+    max-width: 480px;
+    border-right: 1px solid #e0e0e0;
+    }
+
+    /* Right side – image */
+    .right-side {
+    flex: 1;
+    background: #f7f7f7;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 10px;
-}
-
-.card 
-{
-    background: linear-gradient(135deg, #222250 0%, #254888 50%, #91eae4 100%);
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 25px rgb(0 0 0 / 0.2);
-    color: white;
+    position: relative;
     overflow: hidden;
-}
+    }
+    .right-side img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    }
 
-.card-header 
-{
-    background: linear-gradient(135deg, #77aada 0%, #2c2a5f 100%);
-    padding: 30px 50px;
-    text-align: center;
-}
-
-.card-header h2
-{
-    margin: 0 0 10px 0;
-    font-size: 28px;
+    /* Heading text */
+    .welcome-text {
+    margin-bottom: 8px;
     font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.card-header p 
-{
-    margin: 0;
-    font-size: 14px;
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    color: #111;
+    }
+    .welcome-subtext {
+    margin-bottom: 32px;
     font-weight: 400;
-}
+    font-size: 0.9rem;
+    color: #7a7a7a;
+    }
 
-.form-section 
-{
-    background: white;
-    color: #1a202c;
-    padding: 32px 40px 48px 40px;
-    border-radius: 13px;
-    font-weight: 600;
-}
-
-.form-tabs 
-{
-    display: flex;
-    gap: 24px;
-    margin-bottom: 24px;
-}
-
-.form-tab 
-{
-    cursor: pointer;
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #555;
-    border: 1.5px solid ;
-    transition: all 0.3s ease;
-}
-
-.form-tab.active 
-{
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    border-color: #6b46c1;
-    color: white;
-    transition: all 0.5s;
-}
-
-form label 
-{
+    /* Form styles */
+    form {
+    width: 100%;
+    }
+    label {
     display: block;
     font-weight: 600;
-    margin: 8px 0 4px 0;
-    font-size: 14px;
-}
-
-form input
-{
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #333;
+    }
+    input[type="email"],
+    input[type="password"] {
     width: 100%;
-    padding: 8px 12px;
-    border: 1.5px solid #cbd5e0;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
     font-family: inherit;
-}
+    transition: border-color 0.3s ease;
+    outline-offset: 2px;
+    }
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+    border-color: #f0434f;
+    }
 
-form input:focus
-{
-    outline: none;
-    border-color: #6b46c1;
-    box-shadow: 0 0 4px 0 #6b46c1aa;
-}
-
-.checkbox-group 
-{
-    margin: 16px 0 20px 0;
+    /* Checkbox and forgot password */
+    .options {
+    margin: 12px 0 28px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    }
+    .options label {
+    display: flex;
+    align-items: center;
     gap: 8px;
-}
-
-button.submit-btn 
-{
-    width: 100%;
-    padding: 9.6px;
-    background: linear-gradient(90deg, #667eea 50%, #764ba2 0%);
-    background-size: 200%;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 500;
+    color: #444;
     cursor: pointer;
+    }
+    input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    }
+    .forgot-password {
+    color: #7a7a7a;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+    }
+    .forgot-password:hover {
+    color: #f0434f;
+    text-decoration: underline;
+    }
+
+    .btn 
+    {
+    width: 100%;
+    padding: 14px 0;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: background-color 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-button.submit-btn:hover 
-{
-    background-position: right;
-}
-
-@media (max-width: 400px) 
-{
-    .card 
-    {
-        margin: 0 16px;
+    gap: 10px;
+    user-select: none;
     }
-}
+    .btn-primary {
+    background-color: #191646;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(17, 57, 168, 0.445);
+    border: none;
+    }
+    .btn-primary:hover {
+    background-color: #3c469e;
+    box-shadow: 0 6px 18px rgba(30, 21, 68, 0.5);
+    }
+
+    .btn-google 
+    {
+        transition: all 0.5s;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1.8px solid #b0b0b0;
+    color: #444;
+    font-weight: 600;
+    }
+    .btn-google:hover {
+    border-color: #888;
+    box-shadow: 0 4px 12px rgb(136 136 136 / 0.3);
+    color: #000;
+    }
+
+
+    .signup-text {
+    margin-top: 24px;
+    font-size: 0.75rem;
+    color: #777;
+    user-select: none;
+    text-align: center;
+    }
+
+    @media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-side, .right-side {
+        max-width: 100%;
+        flex-basis: auto;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .right-side {
+        order: -1;
+        padding: 24px 0;
+    }
+    }

@@ -3,14 +3,15 @@
     margin: 0px;
     padding: 0px;
 }
-
 nav
 {
+    height: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding:11px;
+    padding:15px;
+    padding-bottom: 17;
     box-shadow: 0px 0px 1px black;
     background-color: white;
     position: fixed;
@@ -21,6 +22,11 @@ nav
 
     .nav_right
     {
+        margin-bottom: 10px;
+        img
+        {
+            width: 50px;
+        }
         i
         {
             background: linear-gradient(120deg, rgb(19, 122, 121), rgb(14, 51, 105));
@@ -44,6 +50,7 @@ nav
     ul
     {
         padding-top: 12px;
+        padding-top: 0px;
         list-style: none;
         display: flex;
         align-items: center;
@@ -64,7 +71,7 @@ nav
         {
             content: "";
             position: absolute;
-            top: -10px;
+            top: -5px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -80,23 +87,24 @@ nav
         }
     }
 
-    button
-    {
-        padding: 12px;
-        border-radius: 5px;
-        border: none;
-        color: white;
-        background: linear-gradient(90deg, rgb(0, 225, 221) 50%, rgb(8, 62, 143) 50%);
-        background-size: 200%;
-        background-position: right;
-        font-weight: bold;
-        transition: all 0.5s;
-    }
+    .login
+{
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background: linear-gradient(90deg, rgb(0, 225, 221) 50%, rgb(8, 62, 143) 50%);
+    background-size: 200%;
+    background-position: right;
+    font-weight: bold;
+    transition: all 0.5s;
+}
 
-    button:hover
-    {
-        background-position: left;
-    }
+.login:hover
+{
+    background-position: left;
+}
 }
 
 
@@ -183,14 +191,25 @@ nav
 
 /* ======================================================================================== */
 
-.start
-{
+.start {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
     display: flex;
+
+    opacity: 0;
+    transform: translate(-50%, 20px); 
+    animation: fadeSlideUp 0.6s ease-out forwards;
+    animation-delay: 0.5s; 
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0); 
+    }
 }
 
 .start_1
@@ -334,6 +353,7 @@ nav
 
 .main_top
 {
+    
     margin-top: 300px;
     h1
     {
@@ -398,11 +418,12 @@ nav
     {
         border-radius:30px;
         position: absolute;
-        top: 180%;
+        top: 170%;
         z-index: 11;
         left: 13%;
     }
 
+    
 
 /* ======================================================================================== */
 
@@ -629,9 +650,35 @@ nav
     color: #00e1dd;
 }
 
+
+.details
+{
+    align-self: center;
+    width: 140px;
+    margin-bottom: 30px;
+    border: #1e3170 solid 1px;
+    background-color: #1e3170;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    transition: all 0.5s;
+}
+.details:hover
+{
+    background-color: white;
+    color: #1e3170;
+}
+
+.meet_doc
+{
+    width: 1200px;
+}
+
 .card
 {
-    height: 600px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    height: 420px;
     transition: all 0.5s;
     border: none;
     box-shadow: 0px 0px 10px rgba(134, 134, 134, 0.678);
@@ -642,6 +689,7 @@ nav
         h5
         {
             color: #1e3170;
+            text-align: center;
         }
 
         .p_1
@@ -666,13 +714,14 @@ nav
     transform: scale(1.03);
     margin-left: 20px;
     margin-right: 20px;
+
 }
 
 .card::before
 {
     content: "";
     position: absolute;
-    top: 597px;
+    top: 647px;
     left: 30px;
     width: 80%;
     height: 3px;
@@ -845,3 +894,85 @@ footer
     }
 
 }
+
+
+.login_rep
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h6
+    {
+        background-color:#1e3170;
+        padding: 6px;
+        border-radius: 5px;
+        color: white;
+        height: 100%;
+        transition: all 0.5s;
+        border: #1e3170 solid 1px;
+    }
+    h6:hover
+    {
+        background-color: white;
+        color: #1e3170;
+        border: solid #1e3170 1px;
+    }
+
+    button
+    {
+        border: red solid 1px;
+        background-color: red;
+        padding: 6px;
+        height: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: white;
+        transition: all 0.5s;
+    }
+    button:hover
+    {
+        background-color: white;
+        color: red;
+        border: solid red 1px;
+    }
+}
+
+
+
+.overly
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 9; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+.doc_details 
+{
+    animation: fadeInScale 0.3s ease forwards;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+@keyframes fadeInScale 
+{
+    to 
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
