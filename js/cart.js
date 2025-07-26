@@ -3,7 +3,7 @@ const dataContainer = document.getElementById("data");
 document.addEventListener("DOMContentLoaded", async () => {
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // حساب التكرارات
+
   const counts = {};
   cartItems.forEach(id => counts[id] = (counts[id] || 0) + 1);
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       total += price * count;
 
       cartHTML += `
-        <div class="col-md-12 mb-3">
+        <div class="col-md-12 mb-3 cart_2222">
           <div class="card p-3 d-flex flex-row justify-content-between align-items-center">
             <div class="d-flex align-items-center gap-3">
               <img src="${item.iconUrl}" alt="" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px;">
@@ -38,9 +38,10 @@ document.addEventListener("DOMContentLoaded", async () => {
               <button class="btn btn-outline-danger" onclick="decreaseQty(${id})">-</button>
               <span class="px-2">${count}</span>
               <button class="btn btn-outline-success" onclick="increaseQty(${id})">+</button>
+              <button class="btn btn-danger" onclick="removeItem(${id})">Remove</button>
             </div>
 
-            <button class="btn btn-danger" onclick="removeItem(${id})">Remove</button>
+            
           </div>
         </div>
       `;
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// زيادات ونقصان الكمية
+
 function increaseQty(id) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(id);
