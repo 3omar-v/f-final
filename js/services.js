@@ -10,30 +10,30 @@ async function api() {
     console.error("API error:", error);
   }
 }
-function display(arr) {
+function display(arr,index) {
   let cartoona = "";
 
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i];
 
     cartoona += `
-      <div class="col-md-4 mb-4 services_11">
-        <div class="rounded-3  p-3 h-100  services_12">
-          <img src="${item.iconUrl}" class="w-100 rounded-3 mb-3" alt="User Image">               
-
-          <h5 class="text-primary">${item.serviceName}</h5>
-
-          <p class="">${item.shortDescription}</p>
-
-          <p class="mb-1"> price : ${item.price}</p>
-
-          <div class="box_btn d-flex justify-content-between mt-3">
-            <button class="btn  btn-sm cart " onclick="addtocart(${item.id})">add to cart</button>
-            <button class="btn  btn-sm" onclick="addToFavorites(${item.id})">add to Favorites </button>
-          </div>
-        </div>
+  <div class="col-md-4 mb-4 services_11">
+    <div class="rounded-3 p-3 h-100 position-relative services_12">
+      
+      <div class="icon-overlay">
+        <i class="fa-regular fa-heart" onclick="addToFavorites(${item.id})" title="Add to Favorites"></i>
+        <i class="fa-solid fa-cart-shopping" onclick="addtocart(${item.id})" title="Add to Cart"></i>
       </div>
-    `;
+      <img src="${item.iconUrl}" class="w-100 rounded-3 mb-3" alt="User Image">               
+      <h5 class="text-primary h5_444">${item.serviceName}</h5>
+      <div style="display:flex; justify-content:center; align-items: center; gap:50px;>
+      <div class="box_btn d-flex justify-content-end">
+        <button class="details" onclick='showServiceDetails(${JSON.stringify(item)})'>view details</button>
+      </div></div>
+    </div>
+  </div>
+`;
+
   }
 
   data.innerHTML = cartoona;
@@ -75,5 +75,66 @@ function addtocart(id)
     confirmButtonText: 'OK'
   });
 }
+
+function showServiceDetails(service) {
+  const div = document.createElement("div");
+  div.classList.add("overly");
+
+
+  div.style.cssText = `
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.4s ease;
+  `;
+
+  div.innerHTML = `
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+      }
+    </style>
+
+    <div class="doc_details" style="
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      animation: fadeIn 0.4s ease;
+    ">
+      <button onclick="this.parentElement.parentElement.remove()" style="
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;">&times;</button>
+
+      <div class="image" style="text-align: center;">
+        <img src="${service.iconUrl}" alt="" style="width: 150px; border-radius: 10px;">
+      </div>
+
+      <div class="data_11" style="text-align: center; margin-top: 15px;">
+        <h4>${service.serviceName}</h4>
+        <p>${service.shortDescription}</p>
+        <div style="display:flex; justify-content: center; gap: 100px;">
+          <p><strong>Price:</strong> ${service.price}</p>
+          <p><strong>Rating:</strong> ${service.rating ?? 'Not rated'}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(div);
+}
+
+
 
 document.addEventListener("DOMContentLoaded", api);

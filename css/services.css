@@ -381,3 +381,55 @@ margin-bottom: 0;
     }
     
 }
+
+
+
+.icon-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .icon-overlay i {
+    background: white;
+    color: #444;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .icon-overlay i:hover {
+    background-color:#17254d;
+    color: white;
+  }
+  
+
+.h5_444
+{
+    text-align: center;
+}
+
+.details
+{
+    margin-top: 27px;
+    width: 140px;
+    margin-bottom: 30px;
+    border: #1e3170 solid 1px;
+    background-color: #1e3170;
+    color: white;
+    border-radius: 15px;
+    height: 40px;
+    transition: all 0.5s;
+}
+.details:hover
+{
+    background-color: white;
+    color: #1e3170;
+}
+
+
