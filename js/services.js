@@ -26,7 +26,7 @@ function display(arr,index) {
       </div>
       <img src="${item.iconUrl}" class="w-100 rounded-3 mb-3" alt="User Image">               
       <h5 class="text-primary h5_444">${item.serviceName}</h5>
-      <div style="display:flex; justify-content:center; align-items: center; gap:50px;>
+<div style="display:flex; justify-content:center; align-items:center; gap:50px;">
       <div class="box_btn d-flex justify-content-end">
         <button class="details" onclick='showServiceDetails(${JSON.stringify(item)})'>view details</button>
       </div></div>

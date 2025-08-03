@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let cartHTML = "";
     let total = 0;
-
+    
     for (const id in counts) {
       const item = services.find(service => service.id === parseInt(id));
       if (!item) continue;
