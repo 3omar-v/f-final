@@ -58,7 +58,7 @@
 
                 <div class="col-md-6">
                     <label for="lastName" class="form-label fw-semibold">Last Name <span class="text-danger">*</span></label>
-                    <inputtype="text" id="lastName" class="form-control"/>
+                    <input type="text" id="lastName" class="form-control"/>
                     <div id="lastNameHelp" class="form-text">Only letters allowed.</div>
                     <div class="invalid-feedback">Please enter a valid last name using letters only.</div>
                 </div>
@@ -106,9 +106,7 @@
                 <input class="form-check-input" type="checkbox" id="subscribe" name="subscribe" />
                 <label class="form-check-label" for="subscribe">Subscribe to our newsletter for property updates</label>
             </div>
-            <button type="submit" class="btn btn-send send"  aria-label="Send message">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 7.855a.5.5 0 0 0-.106.81l4.995 4.995a.5.5 0 0 0 .81-.106L15.964.686z"/></svg> Send Message
-            </button>
+            <button  class="btn btn-send send" onclick="send()" aria-label="Send message">Send Message</button>
             </form>
         </section>
 
@@ -239,24 +237,18 @@
         
         AOS.init();
 
-        // Form validation enhancements
-        (() => {
+        (() => 
+        {
         'use strict'
 
         const form = document.getElementById('contactForm');
 
-        const letterPattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s\-'`]+$/;
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function(event) 
+        {
 
-            // Validate phone number digits only if filled
-            if (phoneInput.value.trim().length > 0 && !/^\d+$/.test(phoneInput.value.trim())) {
-            phoneInput.setCustomValidity('Please enter a valid phone number with digits only.');
-            } else {
-            phoneInput.setCustomValidity('');
-            }
-
-            if (!form.checkValidity()) {
+            if (!form.checkValidity()) 
+            {
             event.preventDefault();
             event.stopPropagation();
             }
@@ -265,6 +257,18 @@
         }, false);
 
         })();
+
+        function send()
+        {
+            Swal.fire
+            ({
+                title: "Success",
+                text: "Your message has been sent!",
+                icon: "success",
+                confirmButtonText: "OK"
+            })
+        }
+
     </script>
     </body>
     </html>
